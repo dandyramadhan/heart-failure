@@ -1,0 +1,5 @@
+model,cv_roc_auc,cv_recall,test_roc_auc,test_recall,test_precision,test_f1,test_accuracy,best_params
+Random Forest (Ensemble),0.9306075135343427,0.8819030412526347,0.9219273075083692,0.8921568627450981,0.8666666666666667,0.8792270531400966,0.8641304347826086,"{""classifier__max_depth"": 12, ""classifier__min_samples_leaf"": 5, ""classifier__n_estimators"": 200}"
+Support Vector Machine (SVM),0.9194897765087466,0.8843119542306533,0.9381874701099953,0.8725490196078431,0.8725490196078431,0.8725490196078431,0.8586956521739131,"{""classifier__estimator__C"": 1, ""classifier__estimator__gamma"": ""auto"", ""classifier__estimator__kernel"": ""rbf""}"
+K-Nearest Neighbors (KNN),0.9115046581442247,0.8546823246010238,0.9332855093256814,0.8921568627450981,0.9191919191919192,0.9054726368159204,0.8967391304347826,"{""classifier__metric"": ""manhattan"", ""classifier__n_neighbors"": 17, ""classifier__weights"": ""distance""}"
+Decision Tree,0.9017732182501831,0.88452273411623,0.882831181252989,0.7941176470588235,0.8526315789473684,0.8223350253807107,0.8097826086956522,"{""classifier__criterion"": ""entropy"", ""classifier__max_depth"": 3, ""classifier__min_samples_split"": 2}"

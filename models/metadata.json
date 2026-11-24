@@ -1,0 +1,312 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-24T10:55:19+00:00",
+  "environment": {
+    "python": "3.13.2",
+    "scikit_learn": "1.9.1",
+    "pandas": "3.1.1",
+    "numpy": "2.5.5"
+  },
+  "dataset": {
+    "path": "data/heart.csv",
+    "n_rows": 918,
+    "n_features_raw": 11,
+    "n_features_model": 14,
+    "positive_rate": 0.5533769063180828,
+    "zero_cholesterol": 172,
+    "zero_resting_bp": 1
+  },
+  "split": {
+    "test_size": 0.2,
+    "random_state": 42,
+    "cv_folds": 5,
+    "n_train": 734,
+    "n_test": 184
+  },
+  "selection_rule": "ROC-AUC cross-validation tertinggi; Recall cross-validation sebagai penentu bila seri. Data uji hanya untuk pelaporan.",
+  "threshold": {
+    "value": 0.23,
+    "default": 0.5,
+    "method": "Maksimal F2-score pada prediksi out-of-fold",
+    "oof_f2": 0.929368029739777
+  },
+  "best_model": {
+    "name": "Random Forest (Ensemble)",
+    "params": {
+      "classifier__max_depth": 12,
+      "classifier__min_samples_leaf": 5,
+      "classifier__n_estimators": 200
+    },
+    "cv_roc_auc": 0.9306075135343427,
+    "cv_recall": 0.8819030412526347,
+    "test_roc_auc": 0.9219273075083692,
+    "test_recall": 0.9607843137254902,
+    "test_precision": 0.7480916030534351,
+    "test_f1": 0.8412017167381974,
+    "test_accuracy": 0.7989130434782609,
+    "test_recall_default_threshold": 0.8921568627450981,
+    "test_precision_default_threshold": 0.8666666666666667,
+    "test_f1_default_threshold": 0.8792270531400966
+  },
+  "models": [
+    {
+      "model": "Random Forest (Ensemble)",
+      "cv_roc_auc": 0.9306075135343427,
+      "cv_recall": 0.8819030412526347,
+      "test_roc_auc": 0.9219273075083692,
+      "test_recall": 0.8921568627450981,
+      "test_precision": 0.8666666666666667,
+      "test_f1": 0.8792270531400966,
+      "test_accuracy": 0.8641304347826086
+    },
+    {
+      "model": "Support Vector Machine (SVM)",
+      "cv_roc_auc": 0.9194897765087466,
+      "cv_recall": 0.8843119542306533,
+      "test_roc_auc": 0.9381874701099953,
+      "test_recall": 0.8725490196078431,
+      "test_precision": 0.8725490196078431,
+      "test_f1": 0.8725490196078431,
+      "test_accuracy": 0.8586956521739131
+    },
+    {
+      "model": "K-Nearest Neighbors (KNN)",
+      "cv_roc_auc": 0.9115046581442247,
+      "cv_recall": 0.8546823246010238,
+      "test_roc_auc": 0.9332855093256814,
+      "test_recall": 0.8921568627450981,
+      "test_precision": 0.9191919191919192,
+      "test_f1": 0.9054726368159204,
+      "test_accuracy": 0.8967391304347826
+    },
+    {
+      "model": "Decision Tree",
+      "cv_roc_auc": 0.9017732182501831,
+      "cv_recall": 0.88452273411623,
+      "test_roc_auc": 0.882831181252989,
+      "test_recall": 0.7941176470588235,
+      "test_precision": 0.8526315789473684,
+      "test_f1": 0.8223350253807107,
+      "test_accuracy": 0.8097826086956522
+    }
+  ],
+  "model_params": {
+    "Random Forest (Ensemble)": {
+      "classifier__max_depth": 12,
+      "classifier__min_samples_leaf": 5,
+      "classifier__n_estimators": 200
+    },
+    "Support Vector Machine (SVM)": {
+      "classifier__estimator__C": 1,
+      "classifier__estimator__gamma": "auto",
+      "classifier__estimator__kernel": "rbf"
+    },
+    "K-Nearest Neighbors (KNN)": {
+      "classifier__metric": "manhattan",
+      "classifier__n_neighbors": 17,
+      "classifier__weights": "distance"
+    },
+    "Decision Tree": {
+      "classifier__criterion": "entropy",
+      "classifier__max_depth": 3,
+      "classifier__min_samples_split": 2
+    }
+  },
+  "confusion_matrix": {
+    "threshold_default": [
+      [
+        68,
+        14
+      ],
+      [
+        11,
+        91
+      ]
+    ],
+    "threshold_tuned": [
+      [
+        49,
+        33
+      ],
+      [
+        4,
+        98
+      ]
+    ]
+  },
+  "roc_curve": {
+    "fpr": [
+      0.0,
+      0.0,
+      0.0,
+      0.0122,
+      0.0122,
+      0.0244,
+      0.0244,
+      0.0366,
+      0.0366,
+      0.0488,
+      0.0488,
+      0.061,
+      0.061,
+      0.0732,
+      0.0732,
+      0.0854,
+      0.0854,
+      0.0976,
+      0.0976,
+      0.1098,
+      0.1098,
+      0.1463,
+      0.1463,
+      0.1585,
+      0.1585,
+      0.1707,
+      0.1707,
+      0.1829,
+      0.1829,
+      0.2561,
+      0.2561,
+      0.3049,
+      0.3049,
+      0.4024,
+      0.4024,
+      0.439,
+      0.439,
+      0.4878,
+      0.4878,
+      0.6098,
+      0.6098,
+      0.622,
+      0.622,
+      1.0
+    ],
+    "tpr": [
+      0.0,
+      0.0098,
+      0.0588,
+      0.0588,
+      0.1961,
+      0.1961,
+      0.4804,
+      0.4804,
+      0.5294,
+      0.5294,
+      0.6176,
+      0.6176,
+      0.6275,
+      0.6275,
+      0.7549,
+      0.7549,
+      0.8039,
+      0.8039,
+      0.8137,
+      0.8137,
+      0.8431,
+      0.8431,
+      0.8725,
+      0.8725,
+      0.8922,
+      0.8922,
+      0.902,
+      0.902,
+      0.9314,
+      0.9314,
+      0.9412,
+      0.9412,
+      0.951,
+      0.951,
+      0.9608,
+      0.9608,
+      0.9706,
+      0.9706,
+      0.9804,
+      0.9804,
+      0.9902,
+      0.9902,
+      1.0,
+      1.0
+    ],
+    "auc": 0.9219273075083692
+  },
+  "feature_importance": [
+    {
+      "feature": "ST_Slope",
+      "importance": 0.1154710664753706,
+      "std": 0.02132789892132114
+    },
+    {
+      "feature": "ChestPainType",
+      "importance": 0.022262075561932083,
+      "std": 0.005643131579957552
+    },
+    {
+      "feature": "Sex",
+      "importance": 0.021162123385939723,
+      "std": 0.0046150786861833435
+    },
+    {
+      "feature": "MaxHR",
+      "importance": 0.016929698708751738,
+      "std": 0.008788791866827777
+    },
+    {
+      "feature": "ExerciseAngina",
+      "importance": 0.01372549019607836,
+      "std": 0.004443645590504615
+    },
+    {
+      "feature": "Oldpeak",
+      "importance": 0.010329985652797668,
+      "std": 0.005325241369369626
+    },
+    {
+      "feature": "RestingBP",
+      "importance": 0.005978000956480101,
+      "std": 0.002634121856291239
+    },
+    {
+      "feature": "FastingBS",
+      "importance": 0.004925872788139607,
+      "std": 0.001965880861699394
+    },
+    {
+      "feature": "Cholesterol",
+      "importance": 0.003204208512673323,
+      "std": 0.0018019880469268854
+    },
+    {
+      "feature": "RestingECG",
+      "importance": 0.0020564323290291455,
+      "std": 0.0010916032721676845
+    },
+    {
+      "feature": "Age",
+      "importance": 0.00011956001912956093,
+      "std": 0.0038386028445306147
+    }
+  ],
+  "columns": {
+    "raw_numeric": [
+      "Age",
+      "RestingBP",
+      "Cholesterol",
+      "FastingBS",
+      "MaxHR",
+      "Oldpeak"
+    ],
+    "raw_categorical": [
+      "Sex",
+      "ChestPainType",
+      "RestingECG",
+      "ExerciseAngina",
+      "ST_Slope"
+    ],
+    "engineered": [
+      "MaxHR_Deficit",
+      "HR_Achievement_Ratio",
+      "BP_Age_Ratio"
+    ],
+    "target": "HeartDisease"
+  }
+}
